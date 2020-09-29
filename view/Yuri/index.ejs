@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro Livro</title>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style>
+
+    body {
+        background-color: rgba(67, 60, 170, 0.705);
+    }    
+
+    nav div {
+      margin-left: 5px;
+    }
+    </style>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link btn btn-primary" href="/">Home</a>
+        </li>
+        <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cadastro de Alunos
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="cadastrar" href="/alunos/create">Novo Cadastro</a><br>
+                <a class="mostrar" href="/alunos/show">Mostrar Registros</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cadastro de Professores
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="cadastrar" href="/prof/create">Novo Cadastro</a><br>
+                <a class="mostrar" href="/prof/show">Mostrar Registros</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cadastro de Livros
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            
+                <a class="cadastrar" href="/livros/create">Novo Cadastro</a><br>
+                <a class="mostrar" href="/livros/show">Mostrar Registros</a>
+            </div>  
+        </div>
+    </ul>
+</nav>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <td><h1>Registro de Livro<span class="badge badge-secondary"></span></h1></td>
+          </div>
+          <h2></h2>
+          <div class="container">
+            <h2></h2>
+            </div>
+
+    <form action="/livros/show" method="POST">
+                
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Titulo do Livro:</label>
+        <input type="text" class="form-control" placeholder="Titulo do Livro" name="name">
+      </div>
+      
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Autor do Livro:</label>
+        <input type="text" class="form-control" placeholder="Autor do Livro" name="surname">
+      </div>
+         
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Quantidade de Páginas:</label>
+        <input type="text" class="form-control" placeholder="Ex: 365" name="quant">
+        </div>
+           
+        <div class="form-group">
+        <label for="exampleFormControlInput1">Lozalizado Em:</label>
+        <input type="text" class="form-control" placeholder="Ex: Estante B" name="local">
+      </div>
+            
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Tema:</label>
+        <input type="text" class="form-control" placeholder="Ex: Terror, Aventura, Cómedia" name="tema">        
+      </div>
+       
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Classificação Indicativa:</label>
+        <input type="text" class="form-control" placeholder="Ex: 12, 16, 18" name="classi"> 
+      </div> 
+      
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Descrição:</label>
+        <input type="text" class="form-control" placeholder="Ex: " name="descri"> 
+        
+      </div>
+     
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Resumo:</label>
+        <input type="text" class="form-control" placeholder="Ex: " name="resumo">        
+      </div>
+     
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">REGISTRAR</button>
+      </div>
+    </form>
+      </body>
+      </html>

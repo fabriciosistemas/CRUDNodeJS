@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Cadastros</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+    body {
+        background-color: rgba(70, 58, 173, 0.616);
+    }
+
+    nav div {
+      margin-left: 5px;
+    }
+    </style>
+  
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link btn btn-primary" href="/">Home</a>
+        </li>
+        <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cadastro de Alunos
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="cadastrar" href="/alunos/create">Novo Cadastro</a><br>
+                <a class="mostrar" href="/alunos/show">Mostrar Registros</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cadastro de Professores
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="cadastrar" href="/prof/create">Novo Cadastro</a><br>
+                <a class="mostrar" href="/prof/show">Mostrar Registros</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cadastro de Livros
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            
+                <a class="cadastrar" href="/livros/create">Novo Cadastro</a><br>
+                <a class="mostrar" href="/livros/show">Mostrar Registros</a>
+            </div>  
+        </div>
+    </ul>
+</nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div style="text-align:center">
+        <td> <h1>Livros Cadastrados <span class="badge badge-secondary"></span></h1></td>
+      </div>
+      </div>
+    </div>
+  </div>    
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <td><p style="text-align:center">Nome</p></td>
+            </div>
+          <div class="col-sm">
+            <td><p style="text-align:center">Sobrenome</p></td>
+          </div>
+           <div class="col-sm">
+            <td><p style="text-align:center">Quantidade</p></td>
+          </div> 
+          <div class="col-sm">
+            <td><p style="text-align:center">Localização</p></td>
+          </div> 
+          <div class="col-sm">
+            <td><p style="text-align:center">Tema</p></td>
+          </div>
+           <div class="col-sm">
+            <td><p style="text-align:center">Classificação Indicativa</p></td>
+          </div>
+           <div class="col-sm">
+            <td><p style="text-align:center">Descrição</p></td>
+          </div>
+           <div class="col-sm">
+            <td><p style="text-align:center">Resumo</p></td>
+          </div> 
+          <div class="col-sm">
+            <td></td>
+          </div>
+          <div class="col-sm">
+            <td></td>
+          </div>
+          </div>
+        </div>
+        
+    
+    <tbody>
+    <% data.forEach(function(details) { %>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <div style="text-align:center">
+            <td><%= details.name %></td>
+          </div>
+            </div>
+            <div class="col-sm">
+            <div style="text-align:center">
+            <td><%= details.surname %></td>
+          </div>
+                  </div>
+           <div class="col-sm">
+            <div style="text-align:center">
+            <td><%= details.quant %></td>
+          </div>
+          </div> 
+          <div class="col-sm">
+            <div style="text-align:center">
+            <td><%= details.local %></td>
+          </div>
+          </div> 
+          <div class="col-sm">
+            <div style="text-align:center">
+            <td><%= details.tema %></td>
+          </div>
+          </div>
+           <div class="col-sm">
+            <div style="text-align:center">
+            <td><%= details.classi %></td>
+          </div>
+          </div>
+           <div class="col-sm">
+            <div style="text-align:center">
+            <td><%= details.descri %></td>
+          </div>
+            </div>
+           <div class="col-sm">
+            <div style="text-align:center">              
+            <td><%= details.resumo %></td>
+          </div>
+          </div>
+          <div class="col-sm">
+            <td><a class="btn btn-warning" href="/livros/edit/<%= details._id %>">EDITAR</a></td>
+            <hr></hr>
+          </div>
+          <div class="col-sm">
+            <td><a class="btn btn-info" href="/livros/delete/<%= details._id %>">DELETAR</a></td>
+            <hr></hr>
+          </div>
+          </div>
+        </div> 
+              
+        <% }) %>
+    </tbody>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <td><h2><a class="btn btn-dark" href="/livros/create">Novo</a></td>
+        </div>
+      </div>
+    </div>         
+  </body>
+</html>

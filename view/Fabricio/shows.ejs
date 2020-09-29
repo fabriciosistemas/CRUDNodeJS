@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteca dos Devs - Registro de Alunos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style>
+    nav div {
+        margin-left: 5px;
+    }
+
+    .nav h2 {
+        margin: 0px 5px 0px;
+      }
+
+    .container {
+        margin-top: 25px;
+      }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link btn btn-primary" href="/">Home</a>
+      </li>
+      <div class="dropdown">
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cadastro de Alunos
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="cadastrar" href="/alunos/create">Novo Cadastro</a><br>
+          <a class="mostrar" href="/alunos/show">Mostrar Registros</a>
+          
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cadastro de Professores
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="cadastrar" href="/prof/create">Novo Cadastro</a><br>
+          <a class="mostrar" href="/prof/show">Mostrar Registros</a>
+          
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cadastro de Livros
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="cadastrar" href="/livros/create">Novo Cadastro</a><br>
+          <a class="mostrar" href="/livros/show">Mostrar Registros</a>
+        </div>  
+      </div>
+    </ul>
+  </nav>
+<div class="container">
+    <h2>Registros de Alunos</h2>
+    <table class="table table-dark table-hover table-responsive" border="3">
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Sobrenome</td>
+                <td>Sexo</td>
+                <td>Matrícula</td>
+                <td>Curso</td>
+                <td>E-mail</td>
+                <td>Endereço</td>
+                <td>Bairro</td>
+                <td>Cidade</td>
+                <td>CPF</td>
+                <td>Idade</td>
+                <td>Telefone</td>
+            </tr>
+        </thead>
+        <tbody>
+        <% data.forEach(function(details) { %>
+            <tr>
+                <td><%= details.name %></td>
+                <td><%= details.surname %></td>
+                <td><%= details.sexo %></td>
+                <td><%= details.matricula %></td>
+                <td><%= details.curso %></td>
+                <td><%= details.email %></td>
+                <td><%= details.endereco %></td>
+                <td><%= details.bairro %></td>
+                <td><%= details.cidade %></td>
+                <td><%= details.cpf %></td>
+                <td><%= details.idade %></td>
+                <td><%= details.telefone %></td>
+                <td><a class="btn btn-warning" href="/alunos/edit/<%= details._id %>">Editar</a></td>
+                <td><a class="btn btn-danger" href="/alunos/delete/<%= details._id %>">Deletar</a></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <div class="nav botoes">   
+        <h2><a class="btn btn-outline-danger" href="/">Voltar</a></h2>
+        <h2><a class="btn btn-outline-dark" href="/alunos/create">Novo Registro</a></h2>
+    </div>
+</div>
+</body>
+</html>

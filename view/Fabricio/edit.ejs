@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteca dos Devs - Editar Registro</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style>
+    nav div {
+        margin-left: 5px;
+    }
+    .container {
+          margin-top: 25px;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link btn btn-primary" href="/">Home</a>
+            </li>
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cadastro de Alunos
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="cadastrar" href="/alunos/create">Novo Cadastro</a><br>
+                    <a class="mostrar" href="/alunos/show">Mostrar Registros</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cadastro de Professores
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="cadastrar" href="/prof/create">Novo Cadastro</a><br>
+                    <a class="mostrar" href="/prof/show">Mostrar Registros</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cadastro de Livros
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                
+                    <a class="cadastrar" href="/livros/create">Novo Cadastro</a><br>
+                    <a class="mostrar" href="/livros/show">Mostrar Registros</a>
+                </div>  
+            </div>
+        </ul>
+    </nav>
+    <div class="container">
+ 
+        <h2>Editar Registro</h2>
+        <% data.forEach(function(details) { %>
+            <form action="/alunos/edit/<%= details._id %>" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input class="form-control" type="text" placeholder="Nome (obrigatório)" value="<%= details.name %>" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sobrenome">Sobrenome</label>
+                <input class="form-control" type="text" placeholder="Sobrenome" value="<%= details.surname %>" name="surname">
+            </div>
+
+            
+            
+            <div class="form-group">
+                <label for="sexo">Sexo</label>
+                <br>
+                <p style="background-color: red;">Opção salva anteriormente: <%= details.sexo %><br>POR FAVOR, (RE)MARQUE A OPÇÃO</p>
+            
+                    <input type="radio" id="masc" name="sexo" value="<%= details.sexo %>">
+                <label for="male">Masculino</label><br>
+                <input type="radio" id="fem" name="sexo" value="<%= details.sexo %>">
+                <label for="female">Feminino</label><br>
+                <input type="radio" id="outro" name="sexo" value="<%= details.sexo %>">
+                <label for="other">Outro</label>
+            </div>
+
+            <div class="form-group">
+                <label for="matricula">Matrícula</label>
+                <input class="form-control" type="text" placeholder="Matrícula (obrigatório)" value="<%= details.matricula %>" name="matricula" required>
+            </div>
+
+            <div class="form-group">
+                <label for="curso">Curso</label>
+                <br>
+                <p style="background-color: red;">Opção salva anteriormente: <%= details.curso %><br>POR FAVOR, (RE)MARQUE A OPÇÃO</p>
+                
+                <select name="curso">
+                    <option value="" selected></option>
+                    <option value="ADS">Análise e Desenvolvimento de Sistemas</option>
+                    <option value="CC">Ciências da Computação</option>
+                    <option value="Eng Comp">Engenharia da Computação</option>
+                    <option value="Redes">Redes de Computadores</option>
+                    <option value="SI">Sistemas de Informação</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input class="form-control" type="email" placeholder="E-mail (obrigatório)" value="<%= details.email %>" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input class="form-control" type="text" placeholder="Endereço" value="<%= details.endereco %>" name="endereco">
+            </div>
+
+            <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input class="form-control" type="text" placeholder="Bairro" value="<%= details.bairro %>" name="bairro">
+            </div>
+
+            <div class="form-group">   
+                <label for="cidade">Cidade</label>
+                <input class="form-control" type="text" placeholder="Cidade" value="<%= details.cidade %>" name="cidade">
+            </div>
+
+            <div class="form-group">    
+                <label for="cpf">CPF</label>
+                <input class="form-control" type="text" placeholder="CPF" value="<%= details.cpf %>" name="cpf">
+            </div>
+
+
+            <div class="form-group"> 
+                <label for="idad">Idade</label>
+                <input class="form-control" type="text" placeholder="Idade" value="<%= details.idade %>" name="idade">
+            </div>
+
+            <div class="form-group"> 
+                <label for="telefone">Telefone</label>
+                <input class="form-control" type="tel" placeholder="Telefone" value="<%= details.telefone %>" name="telefone">
+            </div>
+            <br />
+            <input class="btn btn-primary btn-block" type="submit" value="Editar">
+            <h2><a class="btn btn-outline-danger" href="/alunos/show">Voltar</a></h2>
+            </form>
+        <% }) %>
+    </div>
+ 
+</body>
+</html>

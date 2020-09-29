@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteca dos Devs - Bem Vindo(a)</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  
+  <style>
+    body {
+      background: #41A1DC;
+    }
+
+    nav div {
+      margin-left: 5px;
+    }
+
+    .cadastrar {
+      padding: 5px;
+    }
+
+    .mostrar {
+      padding: 5px;
+    }
+
+    .justify-content-center {
+      margin: 50px;
+    }
+
+    .justify-content-center h2 {
+      margin: 0px 5px 0px;
+    }
+
+    .titulo {
+      text-align: center;
+      margin: 40px;
+      color: white;
+    }
+
+    .carousel {
+      margin-top: 15px;
+    }
+
+    .btn {
+      padding: 2px;
+    }
+
+    footer {
+      padding: 15px;
+      text-align: justify;
+      color: #FFF;
+      background-color: #808B92;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link btn btn-primary" href="#">Home</a>
+      </li>
+      <div class="dropdown">
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cadastro de Alunos
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="cadastrar" href="/alunos/create">Novo Cadastro</a><br>
+          <a class="mostrar" href="/alunos/show">Mostrar Registros</a>
+          
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cadastro de Professores
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="cadastrar" href="/prof/create">Novo Cadastro</a><br>
+          <a class="mostrar" href="/prof/show">Mostrar Registros</a>
+          
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cadastro de Livros
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="cadastrar" href="/livros/create">Novo Cadastro</a><br>
+          <a class="mostrar" href="/livros/show">Mostrar Registros</a>
+        </div>  
+      </div>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+      
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://cdn.pixabay.com/photo/2014/10/14/20/14/library-488690_960_720.jpg" alt="Foto de Biblioteca 1" width="1100" height="500">
+          <div class="carousel-caption">
+            <h4 style="color: yellow; background-color: blue;">LIVROS DE TODAS AS SUBÁREAS DE TI</h4>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://cdn.pixabay.com/photo/2014/08/08/21/03/bookshelf-413705_960_720.jpg" alt="Foto de Biblioteca 2" width="1100" height="500">
+          <div class="carousel-caption">
+            <h4 style="color: yellow; background-color: blue;">ABERTO DE SEGUNDA À SEXTA DAS 8H ÀS 21H</h4>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://cdn.pixabay.com/photo/2016/02/16/21/07/books-1204029_960_720.jpg" alt="Foto de Biblioteca 3" width="1100" height="500">
+          <div class="carousel-caption">
+            <h4 style="color:white; background-color: red;">REGRA IMPORTANTE</h4>
+            <p style="color: blue; background-color: yellow;">ALUNOS PODEM PEGAR 3 LIVROS, PROFESSORES TÊM DIREITO À 5</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+
+      <h1 style = "font-family: sans-serif; color: #FFF; text-align: center; margin-top: 30px;">Bem Vindos(as) à Biblioteca dos Devs</h1>
+
+  </div>
+
+    <footer>
+      <h4>Este projeto tem como objetivo atender a uma solicitação da disciplina Computação para Dispositivos Móveis na criação de um CRUD em Node JS. Somos uma equipe formada por Fabrício Souza, Jeferson Almeida e Yuri de Paula, estudantes do quarto período de Análise e Desenvolvimento de Sistemas na UNIFACS. Salvador-BA, 2020.</h4>
+    </footer>
+</body>
+</html>
