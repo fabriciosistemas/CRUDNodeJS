@@ -6,7 +6,7 @@ const bodyparser = require('body-parser');
 const ObjectId = require('mongodb').ObjectID;
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://admin:<password>@cluster0.2viwx.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const uri = "mongodb+srv://admin:admin@cluster0.2viwx.gcp.mongodb.net/Cadastrar_Aluno?retryWrites=true&w=majority";
  
 MongoClient.connect(uri, (err, client) => {
     if (err) return console.log(err);
